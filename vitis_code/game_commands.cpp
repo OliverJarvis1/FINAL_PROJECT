@@ -284,8 +284,6 @@ void wordle(GpoCore *led_p, SpiCore *spi_p, Ps2Core *ps2_p, GpiCore *btn_p) {
 			curr_char = 0;
 			led_flash = close;
 			led_display = correct + led_flash;
-			correct = 0;
-			close = 0;
 			if (correct == 31) {
 				// guess is correct
 				loop = false;
@@ -295,6 +293,8 @@ void wordle(GpoCore *led_p, SpiCore *spi_p, Ps2Core *ps2_p, GpiCore *btn_p) {
 				// guess is incorrect
 				i += 1;
 			}
+			correct = 0;
+			close = 0;
 		}
 	}
 }
